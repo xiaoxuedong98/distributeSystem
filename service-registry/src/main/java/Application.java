@@ -13,6 +13,8 @@ public class Application implements Watcher {
   private ZooKeeper zooKeeper;
 
   public static void main(String[] args) throws IOException, InterruptedException, KeeperException {
+    //if we run the application instances on different computers, can simply use default port, as the address of
+    //each node will be different
     int currentServerPort = args.length == 1 ? Integer.parseInt(args[0]) : DEFAULT_PORT;
     Application application = new Application();
     ZooKeeper zooKeeper = application.connectToZookeeper();

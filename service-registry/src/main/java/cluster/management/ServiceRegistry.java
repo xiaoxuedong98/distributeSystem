@@ -18,6 +18,7 @@ public class ServiceRegistry implements Watcher {
     createServiceRegistryZnode();
   }
 
+  //register to cluster by publishing their address
   public void registerToCluster(String metadata) throws KeeperException, InterruptedException {
     if (this.currentZnode != null) {
       System.out.println("Already registered to service registry");
@@ -28,6 +29,7 @@ public class ServiceRegistry implements Watcher {
     System.out.println("Registered to service registry");
   }
 
+  //register for updates to get any node's address
   public void registerForUpdates() {
     try {
       updateAddresses();

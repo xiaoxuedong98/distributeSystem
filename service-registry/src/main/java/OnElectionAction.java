@@ -5,6 +5,7 @@ import org.apache.zookeeper.KeeperException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+//integrated with the leader election using callbacks
 public class OnElectionAction implements OnElectionCallback {
   private final ServiceRegistry serviceRegistry;
   private final int port;
