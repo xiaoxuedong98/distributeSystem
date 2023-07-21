@@ -58,6 +58,8 @@ public class WebServer {
             return;
         }
 
+
+        //X-test: will tell a dummyresponse 123 instead of sending the real manipulation
         Headers headers = exchange.getRequestHeaders();
         if (headers.containsKey("X-Test") && headers.get("X-Test").get(0).equalsIgnoreCase("true")) {
             String dummyResponse = "123\n";
@@ -65,6 +67,7 @@ public class WebServer {
             return;
         }
 
+        //will tell a x-debug-info about how much time the operation took
         boolean isDebugMode = false;
         if (headers.containsKey("X-Debug") && headers.get("X-Debug").get(0).equalsIgnoreCase("true")) {
             isDebugMode = true;
