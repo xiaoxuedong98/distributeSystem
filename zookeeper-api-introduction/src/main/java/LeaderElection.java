@@ -87,7 +87,13 @@ public class LeaderElection implements Watcher {
     }
 
     private void run() throws InterruptedException {
+        //Synchronization is used here to ensure that
+        // only one thread at a time can execute
+        // the following block of code within the synchronized block.
         synchronized (zooKeeper) {
+            //This call puts the current thread (the one that invokes the run method)
+            //into a waiting state until it receives a notification
+            // from another thread or until it is interrupted
             zooKeeper.wait();
         }
     }
