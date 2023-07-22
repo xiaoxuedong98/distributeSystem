@@ -11,6 +11,11 @@ import java.net.InetSocketAddress;
 import java.util.Arrays;
 import java.util.concurrent.Executors;
 
+//implement a basic multithreaded HTTP Server that can handle
+//Get requests, Post requests with a message body
+//send and receive custome HTTP headers
+//use cURL to send generic HTTP requets to any HTTP server, and inspect the transaction
+//---curl --request POST -v --header "X-TEST: true" --data '50,100' localhost:8081/task
 public class WebServer {
     private static final String TASK_ENDPOINT = "/task";
     private static final String STATUS_ENDPOINT = "/status";
